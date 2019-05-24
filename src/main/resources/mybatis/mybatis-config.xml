@@ -7,6 +7,9 @@
     <settings>
         <!-- 指定使用log4j输出日志-->
         <setting name="logImpl" value="LOG4J"/>
+        <!-- 下划线数据库列映射到java驼峰命名 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
     </settings>
     <typeAliases>
         <package name="mybatis.model"/>
@@ -25,6 +28,14 @@
         </environment>
     </environments>
     <mappers>
+        <!-- 复杂配置，每有一个配置文件就需在此配置一次
         <mapper resource="mybatis/mapper/CountryMapper.xml"/>
+        <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <mapper resource="mybatis/mapper/UserRoleMapper.xml"/>
+        <mapper resource="mybatis/mapper/RoleMapper.xml"/>
+        <mapper resource="mybatis/mapper/RolePrivilegeMapper.xml"/>
+        <mapper resource="mybatis/mapper/PrivilegeMapper.xml"/>-->
+        <!-- 包配置 -->
+        <package name="mybatis.mapper"/>
     </mappers>
 </configuration>
